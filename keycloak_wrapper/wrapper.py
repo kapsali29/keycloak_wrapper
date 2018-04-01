@@ -1,6 +1,6 @@
 import requests
 import json
-
+import requests
 from urllib.parse import urljoin
 
 from keycloak_wrapper.keycloak_patterns import USER_TOKEN, WELL_KNOWN, USER_INFO, USER_INTROSPECTION, ADMIN_REALM_USERS, \
