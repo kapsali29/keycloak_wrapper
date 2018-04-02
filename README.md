@@ -289,3 +289,41 @@ from keycloak_wrapper import user_roles
 user_perm = user_roles(KEYCLOAK_URL, REALM_NAME, CLIENT_NAME,CLIENT_SECRET,ACCESS_TOKEN)
 ```
 
+**Create User**
+
+Its an **admin** function. The realm admin is able to create a new user.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+- PAYLOAD: REQUEST DATA
+
+```python
+## Create user with attributes (age=33)
+from keycloak_wrapper import create_user
+PAYLOAD = {"email": "example67@example.com",
+           "username": "example67",
+           "enabled": True,
+           "firstName": "Example67",
+           "lastName": "Example67",
+           "credentials": [{"value": "secret67", "type": "password", }],
+           "realmRoles": ["user_default", ],
+           "attributes": {"age": "33"}}
+
+create_user(KEYCLOAK_URL, REALM_NAME, ADMIN_REALM_TOKEN, PAYLOAD)
+```
+
+```python
+## Create user without attributes
+from keycloak_wrapper import create_user
+PAYLOAD = {"email": "example68@example.com",
+           "username": "example68",
+           "enabled": True,
+           "firstName": "Example68",
+           "lastName": "Example68",
+           "credentials": [{"value": "secret68", "type": "password", }],
+           "realmRoles": ["user_default", ]}
+
+create_user(KEYCLOAK_URL, REALM_NAME, ADMIN_REALM_TOKEN, PAYLOAD)
+```
