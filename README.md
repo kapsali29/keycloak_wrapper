@@ -238,7 +238,7 @@ Parameters
 - NEW_ROLE_NAME: new role name
 ```python
 from keycloak_wrapper import create_role
-create_role(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, CLIENT_NAME, NEW_ROLE_NAME)
+create_role(KEYCLOAK_URL, REALM_NAME, ADMIN_REALM_TOKEN, CLIENT_NAME, NEW_ROLE_NAME)
 ```
 
 # **Get Client Role ID**
