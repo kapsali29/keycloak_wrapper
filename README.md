@@ -1,6 +1,6 @@
 ## Keycloak wrapper
 
-This is a Python library, based on **Python3** which calls Keycloak API endpoints. It'
+This is a Python library, based on **Python3** which calls Keycloak API endpoints.
 
 ## Installation
 `$ pip install keycloak_wrapper`
@@ -89,3 +89,12 @@ info = user_info(KEYCLOAK_URL, REALM_NAME,ACCESS_TOKEN)
 With the following function, providing an access token, we can examine if the access token belongs on a registered keycloak user, if the token is valid. If the token is valid returns extended information about the user. This function can executed for **any keycloak user**.
 
 Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- CLIENT_NAME: Keycloak client name
+- CLIENT_SECRET: Keycloak client secret
+- ACCESS_TOKEN: Keycloak user access token
+```python
+from keycloak_wrapper import introspect
+introspection = introspect(EYCLOAK_URL, REALM_NAME, CLIENT_NAME,CLIENT_SECRET,ACCESS_TOKEN)
+```
