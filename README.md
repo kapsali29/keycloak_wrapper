@@ -221,9 +221,20 @@ Parameters
 - REALM_NAME: Provide keycloak realm name
 - ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
 - CLIENT_NAME: Keycloak client name
+- NEW_ROLE_NAME: New role name
 ```python
 from keycloak_wrapper import client_roles
 roles = client_roles(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, CLIENT_NAME)
 ```
+**Create Client Role**
 
+Its an **admin** function. Create a new role on a specific client.
 
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+- CLIENT_NAME: Keycloak client name
+```python
+create_role(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, CLIENT_NAME, NEW_ROLE_NAME)
+```
