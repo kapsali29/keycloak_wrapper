@@ -212,5 +212,18 @@ from keycloak_wrapper import get_client
 client = get_client(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, CLIENT_NAME)
 ```
 
+**Retrieve Client roles**
+
+Its an **admin** function. Client available roles is listed.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+- CLIENT_NAME: Keycloak client name
+```python
+from keycloak_wrapper import client_roles
+roles = client_roles(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, CLIENT_NAME)
+```
 
 
