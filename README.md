@@ -20,7 +20,7 @@ This is a Python library, based on **Python3** which calls Keycloak API endpoint
 
 **Get Access Token**
 
-With the following function a user who is registered on a Keycloak realm can take an access token. This function can executed from any keycloak user
+With the following function a user who is registered on a Keycloak realm can take an access token. This function can executed from **any keycloak user**
 
 Parameters
 - KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
@@ -48,7 +48,7 @@ The response which is returned is the following:
 ```
 **Refresh Access Token**
 
-With the following function a user can refresh his access token. This function can executed from any keycloak user
+With the following function a user can refresh his access token. This function can executed from **any keycloak user**
 
 Parameters
 - KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
@@ -60,3 +60,32 @@ Parameters
 from keycloak_wrapper import refresh_token
 new_token = refresh_token(KEYCLOAK_URL, REALM_NAME, CLIENT_NAME,CLIENT_SECRET, REFRESH_TOKEN)
 ```
+**Get well known KEYCLOAK endpoints**
+
+With the following function a user can receive the keycloak's well known endoints. This function can executed from **any keycloak user**
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ACCESS_TOKEN: Keycloak user access token
+```python
+from keycloak_wrapper import well_known
+well_known_urls = well_known(KEYCLOAK_URL, REALM_NAME,ACCESS_TOKEN)
+```
+**Get user info**
+
+With the following function, a user providing his access token can receive some information about his profile. This function can executed from **any keycloak user**
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ACCESS_TOKEN: Keycloak user access token
+```python
+from keycloak_wrapper import user_info
+info = user_info(KEYCLOAK_URL, REALM_NAME,ACCESS_TOKEN)
+```
+**Access Token Introspection**
+
+With the following function, providing an access token, we can examine if the access token belongs on a registered keycloak user, if the token is valid. If the token is valid returns extended information about the user. This function can executed for **any keycloak user**.
+
+Parameters
