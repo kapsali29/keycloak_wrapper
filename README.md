@@ -111,3 +111,29 @@ Parameters
 from keycloak_wraper import realm_users
 users = realm_users(KEYCLOAK_URL, REALM_NAME, ADMIN_REALM_TOKEN)
 ```
+**Get the number of realm users**
+
+With the following function the admin user of the realm can receive the number of the realm users. This function is executed with the **realm admin's credentials**.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+```python
+from keycloak_wrapper import realm_users_count
+count = realm_users_count(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN)
+```
+
+**Get User keycloak ID**
+
+With the following function, the realm admin can take a user's keycloak ID. This function requires the **realm admin's access token**.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+- USERNAME: Keycloak username for which we want to know his ID.
+```python
+from keycloak_wrapper import user_keycloak_id
+user_id = user_keycloak_id(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, USERNAME)
+```
