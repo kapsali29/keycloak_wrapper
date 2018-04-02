@@ -255,3 +255,21 @@ Parameters
 from keycloak_wrapper import get_role_id
 role_id = get_role_id(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, ROLE_NAME)
 ```
+**Assign role to keycloak user**
+
+Its an **admin** function. Assign client role to keycloak realm user.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+- CLIENT_NAME: Keycloak client name
+- ROLE_NAME: role name
+- USERNAME: keycloak user in which the role will be assigned
+
+Expected response status 204
+
+```python
+from keycloak_wrapper import assign_role_to_user
+assign_role_to_user(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, ROLE_NAME, USERNAME)
+```
