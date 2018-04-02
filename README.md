@@ -6,15 +6,15 @@ This is a Python library, based on **Python3** which calls Keycloak API endpoint
 `$ pip install keycloak_wrapper`
 
 # Requirements
-- [Python 3](https://www.python.org/download/releases/3.0/)
-- [certifi==2018.1.18](https://pypi.python.org/pypi/certifi)
-- [chardet==3.0.4](https://pypi.python.org/pypi/chardet)
-- [idna==2.6](https://pypi.python.org/pypi/idna)
-- [requests==2.18.4](https://pypi.python.org/pypi/requests)
-- [urllib3==1.22](https://pypi.python.org/pypi/urllib3)
++ [Python 3](https://www.python.org/download/releases/3.0/)
++ [certifi==2018.1.18](https://pypi.python.org/pypi/certifi)
++ [chardet==3.0.4](https://pypi.python.org/pypi/chardet)
++ [idna==2.6](https://pypi.python.org/pypi/idna)
++ [requests==2.18.4](https://pypi.python.org/pypi/requests)
++ [urllib3==1.22](https://pypi.python.org/pypi/urllib3)
 
 # Author
-- [Panagiotis Kapsalis](https://www.linkedin.com/in/panagiotis-kapsalis-774800129/)
++ [Panagiotis Kapsalis](https://www.linkedin.com/in/panagiotis-kapsalis-774800129/)
 
 
 
