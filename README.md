@@ -96,5 +96,18 @@ Parameters
 - ACCESS_TOKEN: Keycloak user access token
 ```python
 from keycloak_wrapper import introspect
-introspection = introspect(EYCLOAK_URL, REALM_NAME, CLIENT_NAME,CLIENT_SECRET,ACCESS_TOKEN)
+introspection = introspect(KEYCLOAK_URL, REALM_NAME, CLIENT_NAME,CLIENT_SECRET,ACCESS_TOKEN)
+```
+**Get Realm users**
+
+With the following function the realm admin providing his access token can take information about the current realm users.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+
+```python
+from keycloak_wraper import realm_users
+users = realm_users(KEYCLOAK_URL, REALM_NAME, ADMIN_REALM_TOKEN)
 ```
