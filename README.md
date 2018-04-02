@@ -182,3 +182,17 @@ Parameters
 from keycloak_wrapper import realm_clients
 clients = realm_clients(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN)
 ```
+
+**Get keycloak client interbnal id**
+
+Its an **admin function**, the admin providing a client name gets the keycloak client id.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+- CLIENT_NAME: Keycloak client name
+```python
+from keycloak_wrapper import client_keycloak_id
+client_id = client_keycloak_id(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, CLIENT_NAME)
+```
