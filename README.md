@@ -273,3 +273,19 @@ Expected response status 204
 from keycloak_wrapper import assign_role_to_user
 assign_role_to_user(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, ROLE_NAME, USERNAME)
 ```
+
+**User client roles**
+
+Its a function, which **any user** can set as parameter his access token and get a list of the client roles which possess.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- CLIENT_NAME: Keycloak client name
+- CLIENT_SECRET: Keycloak client secret
+- ACCESS_TOKEN: Keycloak user access token
+```python
+from keycloak_wrapper import user_roles
+user_perm = user_roles(KEYCLOAK_URL, REALM_NAME, CLIENT_NAME,CLIENT_SECRET,ACCESS_TOKEN)
+```
+
