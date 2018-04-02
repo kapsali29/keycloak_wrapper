@@ -137,3 +137,48 @@ Parameters
 from keycloak_wrapper import user_keycloak_id
 user_id = user_keycloak_id(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, USERNAME)
 ```
+**Get User**
+
+With the following function the realm admin retrieves a specific user, who username is defined on function parameters. This function is executed only from **realm admin**
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+- USERNAME: Keycloak username for which we want to get info.
+```python
+from keycloak_wrapper import get_user
+user = get_user(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, USERNAME)
+```
+
+**Get User attributes**
+
+A keycloak user can have attributes. Attributes are pairs (key,value), in which we can store eveything we want. Mostly we define as attributes, more user information, such as age or date of birth. This function is executed by the **realm admin**.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+- USERNAME: Keycloak username for which we want to get info.
+```python
+from keycloak_wrapper import user_attributes
+attrs = user_attributes(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN, USERNAME)
+```
+The returned object is something like this:
+
+```
+{'key_attribute': ['value']}
+```
+
+**Get realm clients**
+
+Its an **admin** function, returns a list with realm clients.
+
+Parameters
+- KEYCLOAK_URL: http(s)://KEYCLOAK:{port}/auth
+- REALM_NAME: Provide keycloak realm name
+- ADMIN_REALM_TOKEN: Keycloak REALM ADMIN access token
+```python
+from keycloak_wrapper import realm_clients
+clients = realm_clients(KEYCLOAK_URL, REALM_NAME, KEYCLOAK_URL, ADMIN_REALM_TOKEN)
+```
