@@ -16,7 +16,7 @@ This is a Python library, based on **Python3** which calls Keycloak API endpoint
 # Author
 - [Panagiotis Kapsalis](https://www.linkedin.com/in/panagiotis-kapsalis-774800129/)
 
-# Documentation
+
 
 # **Get Access Token**
 
