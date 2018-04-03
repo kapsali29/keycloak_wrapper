@@ -328,5 +328,6 @@ def delete_user(keycloak_url, realm, admin_token, username):
     """
     user_id = user_keycloak_id(keycloak_url, realm, admin_token, username)
     params = {"realm-name": realm, "id": user_id}
-    response = requests.delete(url=urljoin(keycloak_url, ADMIN_GET_USER).format(**params)).status_code
+    headers = {"Authorization": "Bearer " + access_token}
+    response = requests.delete(url=urljoin(keycloak_url, ADMIN_GET_USER).format(**params),headers=headers).status_code
     return response
