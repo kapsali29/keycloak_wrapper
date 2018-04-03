@@ -315,3 +315,18 @@ def create_user(keycloak_url, realm, admin_token, payload):
     response = requests.post(url=urljoin(keycloak_url, ADMIN_REALM_USERS).format(**params), headers=headers,
                              data=json.dumps(payload)).status_code
     return response
+
+
+def delete_user(keycloak_url, realm, admin_token, username):
+    """
+
+    :param keycloak_url: KEYCLOAK URL (http://xxxxx/auth)
+    :param realm: KEYCLOAK REALM NAME
+    :param admin_token: REALM Admin access token
+    :param username: KEYCLOAK USERNAME
+    :return:
+    """
+    user_id = user_keycloak_id(keycloak_url, realm, admin_token, username)
+    params = {"realm-name": realm, "id": user_id}
+    response = requests.delete(url=urljoin(keycloak_url, ADMIN_GET_USER).format(**params)).status_code
+    return response
