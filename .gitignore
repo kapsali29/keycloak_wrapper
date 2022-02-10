@@ -107,3 +107,9 @@ s3air-authz-config.json
 Last Modified:
 01/26/2018 00:45:53
 (timezone is UTC)
+
+.
+.env_pypath
+.vscode/settings.json
+test/testAuth.py
+test/constants.py
